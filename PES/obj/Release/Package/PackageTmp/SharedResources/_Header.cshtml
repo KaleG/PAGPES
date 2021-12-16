@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="~/SharedResources/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body style="font-family:'Book Antiqua'">
+        <div class="row" style="background-color:#BEBEBE; height:100px; width:100%;">
+            <div class="col-lg-1">
+                <img height="100px" src="~/Images/Panafric-Global-Logo.png" />
+            </div>
+            <div class="col-lg-10">
+                <h2 style="font-family: 'Book Antiqua'; color: #FFFFFF;">Panafric Global Performance Evaluation</h2>
+            </div>
+            <div class="col-lg-1">
+                <button class="btn btn-danger align-baseline">Log Out</button>
+            </div>
+        </div>
+        <div class="row" style="width:100%">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <!----<div class="navbar-header">
+                        <a class="navbar-brand" href="#">WebSiteName</a>
+                    </div>-->
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="">Mid Term Evaluation</a></li>
+                        <li><a href="#">One to One</a></li>
+                        <li><a href="#">Colleagea Feedback</a></li>
+                        <li><a href="#">Line Manager Evaluation</a></li>
+                        <li><a href="#">Line Manager Feedback</a></li>
+                        <li><a href="#">Rating Officer Comment</a></li>
+                        <li><a href="#">CEO Comment</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    
+    @RenderBody()
+</body>
+</html>

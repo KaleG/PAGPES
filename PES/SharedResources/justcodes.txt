@@ -1,0 +1,109 @@
+﻿    <!---<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--->
+
+
+     <asp:table id="TableEmployeeList" runat="server" style="border: thin dotted #00FFFF; margin-bottom: 15px; margin-top: 5px; width: 95%; margin-left: 2%; font-family: 'Book Antiqua'; line-height: normal; padding-top: inherit; padding-right: inherit; padding-bottom: inherit; padding-left: 10px;">
+           
+<asp:TableHeaderRow>
+    <asp:TableHeaderCell>#Number#</asp:TableHeaderCell>
+    <asp:TableHeaderCell>Name</asp:TableHeaderCell>
+    <asp:TableHeaderCell>Last Name</asp:TableHeaderCell>
+    <asp:TableHeaderCell>ስም</asp:TableHeaderCell>
+    <asp:TableHeaderCell>የአባት ስም</asp:TableHeaderCell>
+    <asp:TableHeaderCell>Company Id</asp:TableHeaderCell>
+    <asp:TableHeaderCell></asp:TableHeaderCell>
+</asp:TableHeaderRow>
+
+                </asp:table>
+
+
+
+                List<DataAccess.Employee> emps = (from em in db.Employees select em).ToList();
+
+            int rowCounter = 1;
+            foreach (DataAccess.Employee emp in emps) 
+            {               
+                
+                TableRow tr = new TableRow() { BorderColor = System.Drawing.Color.DarkTurquoise, BorderStyle=BorderStyle.Dotted,BorderWidth=1  };
+
+                for (int i = 0; i <= 6; i++)
+                {
+                    if (i == 0) 
+                    {
+                        TableCell tc = new TableCell();
+                        tc.Controls.Add(new Label() { Text = rowCounter.ToString() });
+                        tr.Cells.Add(tc);
+                    }
+                    if (i == 1)
+                    {
+                        TableCell tc = new TableCell();
+                        tc.Controls.Add(new Label() { Text = emp.EName });
+                        tr.Cells.Add(tc);
+                    }
+                    if (i == 2) 
+                    {
+                        TableCell tc = new TableCell();
+                        tc.Controls.Add(new Label() { Text = emp.ELName });
+                        tr.Cells.Add(tc);
+                    }
+                    if (i == 3) 
+                    {
+                        TableCell tc = new TableCell();
+                        tc.Controls.Add(new Label() { Text = emp.ENameAM });
+                        tr.Cells.Add(tc);
+                    }
+                    if (i == 4) 
+                    {
+                        TableCell tc = new TableCell();
+                        tc.Controls.Add(new Label() { Text = emp.ELNameAM });
+                        tr.Cells.Add(tc);
+                    }
+                    if (i == 5) 
+                    {
+                        TableCell tc = new TableCell();
+                        tc.Controls.Add(new Label() { Text = emp.CompanyId });
+                        tr.Cells.Add(tc);
+                    }
+                    if (i == 6) 
+                    {
+                        TableCell tc = new TableCell();
+                        tc.Controls.Add(new Button() { Text = "Edit", ID = emp.Id.ToString(), OnClientClick = populateForm(emp.Id), CssClass = "buttonStyling" });
+                        tr.Cells.Add(tc);
+                    }                   
+                }
+                TableEmployeeList.Rows.Add(tr);
+                rowCounter++;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+            -----------------
+
+             <asp:Chart runat="server">
+               <series>
+                   <asp:Series Name="Series1" ChartType="Pie">
+                       <Points>
+                           <asp:DataPoint AxisLabel="a" YValues="100" />
+                           <asp:DataPoint AxisLabel="b" YValues="150" />
+                           <asp:DataPoint AxisLabel="c" YValues="200" />
+                           <asp:DataPoint AxisLabel="d" YValues="250" />
+                       </Points>
+                   </asp:Series>
+               </series>
+               <chartareas>
+                   <asp:ChartArea Name="ChartArea1">
+                       <AxisX Title="name"></AxisX>
+                       <Axisy Title="rank"></Axisy>
+                   </asp:ChartArea>
+               </chartareas>
+           </asp:Chart>
+           
+           ----------

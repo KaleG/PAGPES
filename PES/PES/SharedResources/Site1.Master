@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="PES.SharedResources.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    <link href="~/SharedResources/StyleSheet1.css" rel="stylesheet" />
+
+    </asp:ContentPlaceHolder>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    
+
+</head>
+<body style="font-family: 'Book Antiqua';height:100%;">
+    <form id="form1" runat="server" style="height:100%;">
+        <div class="row" style="background-color: #BEBEBE; height: 100px; width: 100%;">
+            <div class="col-lg-1">
+                <img height="100px" src="../Images/Panafric-Global-Logo.png" />
+            </div>
+            <div class="col-lg-10">
+                <h2 style="font-family: 'Book Antiqua'; color: #FFFFFF;">Panafric Global Performance Evaluation</h2>
+            </div>
+
+        </div>
+        <div class="row" style="width: 100%">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <!----<div class="navbar-header">
+                        <a class="navbar-brand" href="#">WebSiteName</a>
+                    </div>-->
+                    <ul class="nav navbar-nav">
+                        <li><a href="../Presentation/Home.aspx">Home</a></li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mid Term Evaluation
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Presentation/WebForm2.aspx">Performance Rating</a></li>
+                                <li><a href="../Presentation/Next6MonthPlans.aspx">6 Month Plan</a></li>
+                                <li><a href="../Presentation/EvaluationByLineManager.aspx">Evaluation By Line Mgr.</a></li>
+                                <li><a href="../Presentation/AreaManaget6MonthPlan.aspx">6 Month Plan By Line Mrg.</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown" id="DivMidTermColleagueEvaluation" runat="server">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mid Term Colleagea Evaluation
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Presentation/MidTermColleagueEvaluation.aspx">Evaluate Performance</a></li>
+                                <li><a href="../Presentation/Set6MonthPlanForColleage.aspx">Set 6 Month Plan</a></li>                                
+                            </ul>
+                        </li>
+                                             
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Annual Evaluation
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                        <li><a href="#">One to One</a></li>
+                        <li><a href="#">Colleagea Feedback</a></li>
+                        <li><a href="#">Line Manager Evaluation</a></li>
+                        <li><a href="#">Line Manager Feedback</a></li>
+                        <li><a href="#">Rating Officer Comment</a></li>
+                        <li><a href="#">CEO Comment</a></li>
+                                </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Annual Colleagea Evaluation
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                        <li><a href="../Presentation/EvaluationByLineManager.aspx">Evaluate Colleagea</a></li>
+                        <li><a href="../Presentation/EvaluationByLineManager.aspx">Evaluate Area Mgr.</a></li>
+                                </ul>
+                        </li>
+
+                        <li><a href="../Presentation/EvaluationByLineManager.aspx">Award</a></li>
+
+                        <li id="DivReport" runat="server" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">                      
+                        <li><a href="../Presentation/AllEmployeesReport.aspx">Evaluation Report</a></li>
+                        <li><a href="../Presentation/6MonthPlanReports.aspx">6 Month Plan Report</a></li>
+                        </ul>
+                        </li>
+
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    <asp:Button style="margin-left;margin-top:6px;" CssClass="btn" ID="BtnChangeLanguage" runat="server" OnClick="BtnChangeLanguage_Click" Text="Change Language" />
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+            
+        
+    
+    <div class="footer" style="margin-bottom:0px;position: fixed;left: 0;
+    bottom: 0;
+    width: 99%;
+    background-color: #e6e6e6;
+    color: white;
+    text-align: left;
+    height:60px;">    
+  <!-- Copyright -->
+ <i style = "text-align:left; color:#cc7a00">PREPARED BY : PANAFRIC GLOBAL IT GROUP</i>
+  <!-- Copyright -->
+        <ul class="nav navbar-nav navbar-right">
+                        <li><span class="" style="margin-right:50px;">
+                            <asp:Button style="width:91%;margin-right:50px;" CssClass="btn btn-warning" ID="btnLogOut" OnClick="btnLogOut_Click" runat="server" Text="Log Out" />
+                        </span></li>
+                    </ul>
+              </div>
+</form>
+
+   
+
+</body>
+</html>

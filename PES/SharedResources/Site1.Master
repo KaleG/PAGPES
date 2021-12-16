@@ -1,0 +1,202 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="PES.SharedResources.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="icon" href="logo_3Na_icon.ico">
+        <link href="StyleSheet1.css" rel="stylesheet" />
+
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>  
+  <script>
+$(document).ready( function () {
+    $('#TableEmployeeList').DataTable();
+} );
+
+  </script>  
+<asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+</head>
+<body style="font-family: 'Book Antiqua';height:100%;">
+    <form id="form1" runat="server" style="height:100%;">
+        <div class="row" style="background-color: #BEBEBE; height: 100px; width: 100%;">
+            <div class="col-sm-1">
+                 <a href="../Presentation/Home.aspx"><img height="100px" src="../Images/Panafric-Global-Logo.png" /></a>
+            </div>
+            <div class="col-sm-9">
+                <h2 style="font-family: 'Book Antiqua'; color: #FFFFFF;">Panafric Global Performance Evaluation</h2>
+            </div>
+             <div class="col-sm-1">
+                 <asp:LinkButton style="font-family: 'Book Antiqua'; color: #FFFFFF;" ID="theLoginUserName" CssClass="btn" runat="server" OnClick="theLoginUserName_Click"><span class="glyphicon glyphicon-user"></span></asp:LinkButton>
+             </div>
+        </div>
+        <div class="row" style="width: 100%">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <!----<div class="navbar-header">
+                        <a class="navbar-brand" href="#">WebSiteName</a>
+                    </div>-->
+                    <ul class="nav navbar-nav">
+                        <!--<li><a href="../Presentation/Home.aspx">Home</a></li>-->
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mid Term Evaluation
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Presentation/WebForm2.aspx">Performance Rating</a></li>
+                                <li><a href="../Presentation/Next6MonthPlans.aspx">6 Month Plan</a></li>
+                                <li id="NavEvaluationByLineMgr" runat="server" visible="true"><a href="../Presentation/EvaluationByLineManager.aspx">Evaluation By Line Mgr.</a></li>
+                                <li><a href="../Presentation/AreaManaget6MonthPlan.aspx">6 Month Plan By Line Mrg.</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown" id="DivMidTermColleagueEvaluation" runat="server">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mid Term Line Mgr. Evaluation
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Presentation/MidTermColleagueEvaluation.aspx">Evaluate Performance</a></li>
+                                <li><a href="../Presentation/Set6MonthPlanForColleage.aspx">Set 6 Month Plan</a></li>                                
+                            </ul>
+                        </li>
+
+                        <li id="DivReport" runat="server" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mid Term Reports
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">                      
+                        <li><a href="../Presentation/AllEmployeesReport.aspx">Evaluation Report</a></li>
+                        <li><a href="../Presentation/6MonthPlanReports.aspx">6 Month Plan Report</a></li>
+                        <li><a href="../Presentation/GeneralEvaluationReport.aspx">General Evaluation Report</a></li>
+                        <li><a href="../Presentation/GeneralPlanningReport.aspx">General Planning Report</a></li>
+                        <li><a href="../Presentation/ReportUnSubmittedEvaluation.aspx">Submitted Evaluations</a></li>
+                        <li><a href="../Presentation/ReportUnsubmittedPlan.aspx">Submitted Plan</a></li>
+                        </ul>
+                        </li>
+                                             
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Annual Evaluation
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                        <li><a href="../Presentation/AnnualPESheet.aspx">PAG PE sheet</a></li>
+                        <li><a href="../Presentation/WorkPlanforNextYear.aspx">Work plan for Next year</a></li>
+                        <li><a href="../Presentation/AnnualColleagueFeedBack.aspx">Colleagea Feedback</a></li>
+                        <!--<li><a href="../Presentation/AnnualLineMgrFeedBack.aspx">Line Manager Feedback</a></li>
+                        <li id="DivmyEmployeesFeedBAck" runat="server"><a href="../Presentation/MyEmployesEvaluation.aspx">Employees Evaluation</a></li>-->
+                        <li><a href="#">CEO Comment</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Annual Staff Evaluation
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                        <li><a href="../Presentation/GiveColleagueAnnualEvaluation4.aspx">Evaluate Colleagea</a></li>
+                        <li><a href="../Presentation/EvaluateLineManager.aspx">Evaluate Line Mgr.</a></li>
+                        <li runat="server" id="DivEmployeeEvaluation"><a href="../Presentation/AnnualEmployeeEvaluation.aspx">Evaluate Employee</a></li>
+                                </ul>
+                        </li>
+
+                         <li id="DivAnnualEvaluationREport" runat="server" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Annual Reports
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                        <li><a href="../Presentation/AnnualEvaluationREportByEmployee.aspx">Report by Employee</a></li>
+                        <li><a href="../Presentation/LineManagersEvaluationReport.aspx">Employee by Line Mgr. Evn.</a></li>
+                        <li><a href="../Presentation/MyEmployesEvaluation.aspx">Line Mgr. By Employee Evn.</a></li>
+                        <li><a href="../Presentation/ReportOnColleagueEvaluation.aspx">Employee By Employee Evn.</a></li>
+                        <li><a href="../Presentation/SubmittedAnnualForms.aspx">Submitted Evaluations</a></li>
+                                </ul>
+                        </li>
+
+                        <li style="display:none;"><a href="../Presentation/EvaluationByLineManager.aspx">Award</a></li>
+
+                        
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right" id="DivSetting" runat="server">
+                         <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Presentation/UserManagement.aspx">User Managment</a></li>
+                                <li><a href="#">Period Managment</a></li>
+                                <li><a href="#">Evaluation Point Managment</a></li>
+                                <li><a href="#">Planning Point Managment</a></li>
+                                <li><a href="../Presentation/UserProfile.aspx">Profile</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <asp:LinkButton ID="BtnChangeLanguage" CssClass="btn btn-default" Style=" margin-top: 6px;" runat="server" OnClick="BtnChangeLanguage_Click"><span class="glyphicon glyphicon-sort"></span>Languages</asp:LinkButton>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        <div class="row" style="background-color: #f5f8fa; width: 100%; ">
+            <div class="col-lg-3">
+                <table style=" margin-bottom: 15px; margin-top: 5px; width: 95%; margin-left: 2%; font-family: 'Book Antiqua'; line-height: normal; padding-top: inherit; padding-right: inherit; padding-bottom: inherit; padding-left: 10px;">
+                    <tr>
+                        <td class="formTable">
+                            <asp:DropDownList ID="DDLEvaluatedEmployee" runat="server" BackColor="#C3CDDB" DataSourceID="SQLSEmployeesList"
+                                DataTextField="EvaluationPeriod" DataValueField="Id" Height="30px" Width="100%"
+                                Font-Names="Book Antiqua">
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="SQLSEmployeesList" runat="server" ConnectionString="<%$ ConnectionStrings:PerformaceEvaluationConnectionString1 %>" SelectCommand="SELECT * FROM [EvaluationPeriod] ORDER BY [Id] DESC"></asp:SqlDataSource>
+                        </td>
+                        <td>                            
+            <asp:LinkButton ID="BtnSelectPeriod" runat="server" Style="width: 100%; margin: 5px;" CssClass="btn" Text="Select Period" OnClick="BtnSelectPeriod_Click" ><span class="glyphicon glyphicon-list"></span> Selected Period </asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-lg-6">
+                <hr/>
+            </div>
+            <div class="col-lg-3">
+                <h4 style="color: #cc7a00;" id="currentPageName" runat="server"></h4>
+            </div>
+        </div>
+        <div style="min-height:2000px; overflow-y:scroll;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>    
+            
+    <div class="row" style="width: 95%; margin-left: 2%;">
+    <div class="col-lg-12">
+       
+    <div class="footer" style="margin-bottom:0px;position: fixed;left: 0;
+    bottom: 0;
+    width: 99%;
+    background-color: #e6e6e6;
+    color: white;
+    text-align: left;
+    height:60px;">    
+  <!-- Copyright -->
+ <i style = "text-align:left; color:#cc7a00">Prepared by : Panafric global IT team
+  <!-- Copyright -->
+        <ul class="nav navbar-nav navbar-right">
+                        <li><span class="" style="margin-right:50px;">
+                            <asp:Button style="width:91%;margin-right:50px;" CssClass="btn btn-warning" ID="btnLogOut" OnClick="btnLogOut_Click" runat="server" Text="Log Out" />
+                        </span></li>
+                    </ul>
+              </div>
+              </div>
+              </div>
+</form>   
+    
+    <script>     
+
+    </script>
+
+</body>
+</html>

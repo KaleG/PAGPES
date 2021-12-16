@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PerformaceEvaluation" Class="PerformanceEvaluationDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=PANAFRIC-KALEAB;Initial Catalog=PerformaceEvaluation;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PerformaceEvaluationConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EvaluationPeriod" Member="EvaluationPeriods">
+    <Type Name="EvaluationPeriod">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EvaluationPeriod" Member="EvaluationPeriod1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="isClosed" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_Employee_LineManager" Member="Employee_LineManagers" ThisKey="Id" OtherKey="period" Type="Employee_LineManager" />
+      <Association Name="EvaluationPeriod_EvaluatedPoint" Member="EvaluatedPoints" ThisKey="Id" OtherKey="EvaluationPeriod" Type="EvaluatedPoint" />
+      <Association Name="EvaluationPeriod_SixMonthPlan" Member="SixMonthPlans" ThisKey="Id" OtherKey="EvaluationPeriod" Type="SixMonthPlan" />
+      <Association Name="EvaluationPeriod_WorkPlanforNextYear" Member="WorkPlanforNextYears" ThisKey="Id" OtherKey="EvaluationPlanPeriod" Type="WorkPlanforNextYear" />
+      <Association Name="EvaluationPeriod_AnnualColleagueEvaluation" Member="AnnualColleagueEvaluations" ThisKey="Id" OtherKey="EvaluationPeriod" Type="AnnualColleagueEvaluation" />
+      <Association Name="EvaluationPeriod_AnnualLineManagerEvaluation" Member="AnnualLineManagerEvaluations" ThisKey="Id" OtherKey="EvaluationPeriod" Type="AnnualLineManagerEvaluation" />
+      <Association Name="EvaluationPeriod_AreaOfAchievement" Member="AreaOfAchievements" ThisKey="Id" OtherKey="EvaluationPeriod" Type="AreaOfAchievement" />
+      <Association Name="EvaluationPeriod_AreaOfImprovement" Member="AreaOfImprovements" ThisKey="Id" OtherKey="EvaluationPeriod" Type="AreaOfImprovement" />
+      <Association Name="EvaluationPeriod_AdministrativeRelatedIssuePerformance" Member="AdministrativeRelatedIssuePerformances" ThisKey="Id" OtherKey="EvaluationPeriod" Type="AdministrativeRelatedIssuePerformance" />
+      <Association Name="EvaluationPeriod_MarketingRelatedIssuePerformance" Member="MarketingRelatedIssuePerformances" ThisKey="Id" OtherKey="EvaluationPeriod" Type="MarketingRelatedIssuePerformance" />
+      <Association Name="EvaluationPeriod_OverAllGeneralPerformance" Member="OverAllGeneralPerformances" ThisKey="Id" OtherKey="EvaluationPeriod" Type="OverAllGeneralPerformance" />
+      <Association Name="EvaluationPeriod_AddionalPAGRelatedGeneral" Member="AddionalPAGRelatedGenerals" ThisKey="Id" OtherKey="EvaluationPeriod" Type="AddionalPAGRelatedGeneral" />
+      <Association Name="EvaluationPeriod_AnnualEmployeeEvaluationNote" Member="AnnualEmployeeEvaluationNotes" ThisKey="Id" OtherKey="EvaluationPeriod" Type="AnnualEmployeeEvaluationNote" />
+      <Association Name="EvaluationPeriod_AnnualEmployeeEvaluationYesNo" Member="AnnualEmployeeEvaluationYesNos" ThisKey="Id" OtherKey="EvaluationPeriod" Type="AnnualEmployeeEvaluationYesNo" />
+      <Association Name="EvaluationPeriod_EmployeesToLineMGREvaluation" Member="EmployeesToLineMGREvaluations" ThisKey="Id" OtherKey="EvaluationPeriod" Type="EmployeesToLineMGREvaluation" />
+      <Association Name="EvaluationPeriod_EmployeesToLineMGREvaluationForm" Member="EmployeesToLineMGREvaluationForms" ThisKey="Id" OtherKey="EvaluationPeriod" Type="EmployeesToLineMGREvaluationForm" />
+      <Association Name="EvaluationPeriod_CEOCommentOnAnnualEvaluation" Member="CEOCommentOnAnnualEvaluations" ThisKey="Id" OtherKey="EvaluationPeriod" Type="CEOCommentOnAnnualEvaluation" />
+      <Association Name="EvaluationPeriod_SubmitedAnnualForm" Member="SubmitedAnnualForms" ThisKey="Id" OtherKey="EvaluationPeriod" Type="SubmitedAnnualForm" />
+      <Association Name="EvaluationPeriod_EvaluationDisclosure" Member="EvaluationDisclosures" ThisKey="Id" OtherKey="EvaluationPeriod" Type="EvaluationDisclosure" />
+      <Association Name="EvaluationPeriod_EvaluationDisclosure1" Member="EvaluationDisclosures1" ThisKey="Id" OtherKey="EvaluationPeriod" Type="EvaluationDisclosure" />
+      <Association Name="EvaluationPeriod_Employee_evaluatorColleague" Member="Employee_evaluatorColleagues" ThisKey="Id" OtherKey="period" Type="Employee_evaluatorColleague" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LKDatatypes" Member="LKDatatypes">
+    <Type Name="LKDatatype">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TypeName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="LKDatatype_LKEvaluationPoint" Member="LKEvaluationPoints" ThisKey="Id" OtherKey="DataTypes" Type="LKEvaluationPoint" />
+      <Association Name="LKDatatype_LKSixMonthPlan" Member="LKSixMonthPlans" ThisKey="Id" OtherKey="DataTypeSelection" Type="LKSixMonthPlan" />
+      <Association Name="LKDatatype_LKColleagueFeedBAckPoint" Member="LKColleagueFeedBAckPoints" ThisKey="Id" OtherKey="DataType" Type="LKColleagueFeedBAckPoint" />
+      <Association Name="LKDatatype_LKLineMgrFeedBAckPoint" Member="LKLineMgrFeedBAckPoints" ThisKey="Id" OtherKey="DataTypes" Type="LKLineMgrFeedBAckPoint" />
+      <Association Name="LKDatatype_LKEmployeesToLineMGREvaluation" Member="LKEmployeesToLineMGREvaluations" ThisKey="Id" OtherKey="DataTypes" Type="LKEmployeesToLineMGREvaluation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LKUsersRoles" Member="LKUsersRoles">
+    <Type Name="LKUsersRole">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="statusRemark" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="LKUsersRole_UsersLogIn" Member="UsersLogIns" ThisKey="Id" OtherKey="UserRole" Type="UsersLogIn" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsersLogIn" Member="UsersLogIns">
+    <Type Name="UsersLogIn">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Pwd" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserRole" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LKUsersRole_UsersLogIn" Member="LKUsersRole" ThisKey="UserRole" OtherKey="Id" Type="LKUsersRole" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Employe_User" Member="View_Employe_Users">
+    <Type Name="View_Employe_User">
+      <Column Name="IDEmp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ELName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ENameAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ELNameAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="JobPosition" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="JobPositionAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ISActiveEmp" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CompanyIDEmp" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Pwd" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsActiveUser" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CompanyIdUser" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserRole" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDLKUserRole" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="statusRemark" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Employe_User" Member="View_Employe_User1s">
+    <Type Name="View_Employe_User1">
+      <Column Name="IDEmp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ELName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ENameAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ELNameAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="JobPosition" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="JobPositionAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ISActiveEmp" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CompanyIDEmp" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Pwd" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsActiveUser" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CompanyIdUser" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserRole" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDLKUserRole" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="statusRemark" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee_LineManager" Member="Employee_LineManagers">
+    <Type Name="Employee_LineManager">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="employeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineManager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="period" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="statuss" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_Employee_LineManager" Member="EvaluationPeriod" ThisKey="period" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_Employee_LineManager" Member="Employee" ThisKey="employeeID" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_Employee_LineManager1" Member="Employee1" ThisKey="employeeID" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_Employee_LineManager2" Member="Employee2" ThisKey="LineManager" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_Employee_LineManager3" Member="Employee3" ThisKey="LineManager" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_EmployessList" Member="View_EmployessLists">
+    <Type Name="View_EmployessList">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullENName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ELFullNameEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LKEvaluationPoints" Member="LKEvaluationPoints">
+    <Type Name="LKEvaluationPoint">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EvaluationName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="MaxRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DataTypes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationNameAmharic" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="LKEvaluationPoint_EvaluatedPoint" Member="EvaluatedPoints" ThisKey="Id" OtherKey="EvaluationPointName" Type="EvaluatedPoint" />
+      <Association Name="LKDatatype_LKEvaluationPoint" Member="LKDatatype" ThisKey="DataTypes" OtherKey="Id" Type="LKDatatype" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LKSixMonthPlan" Member="LKSixMonthPlans">
+    <Type Name="LKSixMonthPlan">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlanName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DataTypeSelection" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LanguageSelection" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="StatusRemark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PreparedByID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlanNameAmharic" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="LKSixMonthPlan_SixMonthPlan" Member="SixMonthPlans" ThisKey="Id" OtherKey="PlanName" Type="SixMonthPlan" />
+      <Association Name="LKDatatype_LKSixMonthPlan" Member="LKDatatype" ThisKey="DataTypeSelection" OtherKey="Id" Type="LKDatatype" IsForeignKey="true" />
+      <Association Name="Employee_LKSixMonthPlan" Member="Employee" ThisKey="PreparedByID" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_LKSixMonthPlan1" Member="Employee1" ThisKey="PreparedByID" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EvaluatedPoints" Member="EvaluatedPoints">
+    <Type Name="EvaluatedPoint">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPointName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPointGiven" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="evaluationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsSubmitted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="LKEvaluationPoint_EvaluatedPoint" Member="LKEvaluationPoint" ThisKey="EvaluationPointName" OtherKey="Id" Type="LKEvaluationPoint" IsForeignKey="true" />
+      <Association Name="EvaluationPeriod_EvaluatedPoint" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_EvaluatedPoint" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_EvaluatedPoint1" Member="Employee1" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_EvaluatedPoint2" Member="Employee2" ThisKey="EvaluatorId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_EvaluatedPoint3" Member="Employee3" ThisKey="EvaluatorId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SixMonthPlan" Member="SixMonthPlans">
+    <Type Name="SixMonthPlan">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlanSetByEmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlanName" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PriorityGiven" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DatePlanned" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StatusRemark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsSubmitted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PlanSetForEmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserRemark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_SixMonthPlan" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="LKSixMonthPlan_SixMonthPlan" Member="LKSixMonthPlan" ThisKey="PlanName" OtherKey="Id" Type="LKSixMonthPlan" IsForeignKey="true" />
+      <Association Name="Employee_SixMonthPlan" Member="Employee" ThisKey="PlanSetByEmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_SixMonthPlan1" Member="Employee1" ThisKey="PlanSetForEmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_SixMonthPlan2" Member="Employee2" ThisKey="PlanSetByEmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_SixMonthPlan3" Member="Employee3" ThisKey="PlanSetForEmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkPlanforNextYear" Member="WorkPlanforNextYears">
+    <Type Name="WorkPlanforNextYear">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SmartObjective" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ActionPlan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EndResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TimeFrameStart" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TimeFrameEnd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EvaluationPlanPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_WorkPlanforNextYear" Member="EvaluationPeriod" ThisKey="EvaluationPlanPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_WorkPlanforNextYear" Member="Employee" ThisKey="EmployeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AnnualColleagueEvaluations" Member="AnnualColleagueEvaluations">
+    <Type Name="AnnualColleagueEvaluation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatorColleagueId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPointName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPointGiven" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EavluationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IsSubmitted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_AnnualColleagueEvaluation" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="LKColleagueFeedBAckPoint_AnnualColleagueEvaluation" Member="LKColleagueFeedBAckPoint" ThisKey="EvaluationPointName" OtherKey="Id" Type="LKColleagueFeedBAckPoint" IsForeignKey="true" />
+      <Association Name="Employee_AnnualColleagueEvaluation" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_AnnualColleagueEvaluation1" Member="Employee1" ThisKey="EvaluatorColleagueId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LKColleagueFeedBAckPoints" Member="LKColleagueFeedBAckPoints">
+    <Type Name="LKColleagueFeedBAckPoint">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EvaluationName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="EvaluationNameAmharic" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="MaxRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DataType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LKColleagueFeedBAckPoint_AnnualColleagueEvaluation" Member="AnnualColleagueEvaluations" ThisKey="Id" OtherKey="EvaluationPointName" Type="AnnualColleagueEvaluation" />
+      <Association Name="LKDatatype_LKColleagueFeedBAckPoint" Member="LKDatatype" ThisKey="DataType" OtherKey="Id" Type="LKDatatype" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AnnualLineManagerEvaluations" Member="AnnualLineManagerEvaluations">
+    <Type Name="AnnualLineManagerEvaluation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatorLineMgrId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPointName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPointGiven" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EvaluatinDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IsSubmitted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_AnnualLineManagerEvaluation" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="LKLineMgrFeedBAckPoint_AnnualLineManagerEvaluation" Member="LKLineMgrFeedBAckPoint" ThisKey="EvaluationPointName" OtherKey="Id" Type="LKLineMgrFeedBAckPoint" IsForeignKey="true" />
+      <Association Name="Employee_AnnualLineManagerEvaluation" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_AnnualLineManagerEvaluation1" Member="Employee1" ThisKey="EvaluatorLineMgrId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LKLineMgrFeedBAckPoint" Member="LKLineMgrFeedBAckPoints">
+    <Type Name="LKLineMgrFeedBAckPoint">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EvaluationName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EvaluationNameAmharic" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaxRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Statuss" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DataTypes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LKLineMgrFeedBAckPoint_AnnualLineManagerEvaluation" Member="AnnualLineManagerEvaluations" ThisKey="Id" OtherKey="EvaluationPointName" Type="AnnualLineManagerEvaluation" />
+      <Association Name="LKDatatype_LKLineMgrFeedBAckPoint" Member="LKDatatype" ThisKey="DataTypes" OtherKey="Id" Type="LKDatatype" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_employe_EvaluatorCollueage" Member="View_employe_EvaluatorCollueages">
+    <Type Name="View_employe_EvaluatorCollueage">
+      <Column Name="EvaluatorFullName" Type="System.String" DbType="NVarChar(501)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="period" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatorColleague" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeFullName" Type="System.String" DbType="NVarChar(501)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AreaOfAchievement" Member="AreaOfAchievements">
+    <Type Name="AreaOfAchievement">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DirectJobRelated" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NumberOfAssignmentsByMySelf" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NumberOfAssignmentsHandledTogether" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NumberOfAssignmentsWithKPI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_AreaOfAchievement" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_AreaOfAchievement" Member="Employee" ThisKey="EmployeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AreaOfImprovement" Member="AreaOfImprovements">
+    <Type Name="AreaOfImprovement">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumberOfErrors" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NumberOfDummages" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DelayesCaused" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Others" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REmark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastObjectiveAndAcionPlan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ObjectiveAchivmentMeasure" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="StrategiesUsed" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewYearPlan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_AreaOfImprovement" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_AreaOfImprovement" Member="Employee" ThisKey="EmployeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdministrativeRelatedIssuePerformance" Member="AdministrativeRelatedIssuePerformances">
+    <Type Name="AdministrativeRelatedIssuePerformance">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatinDAte" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PerformanceMeasure" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewYearPlan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_AdministrativeRelatedIssuePerformance" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_AdministrativeRelatedIssuePerformance" Member="Employee" ThisKey="EmployeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MarketingRelatedIssuePerformance" Member="MarketingRelatedIssuePerformances">
+    <Type Name="MarketingRelatedIssuePerformance">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatinDAte" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PerformanceMeasure" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewYearPlan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_MarketingRelatedIssuePerformance" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_MarketingRelatedIssuePerformance" Member="Employee" ThisKey="EmployeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OverAllGeneralPerformance" Member="OverAllGeneralPerformances">
+    <Type Name="OverAllGeneralPerformance">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatinDAte" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PerformanceMeasure" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NewYearPlan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_OverAllGeneralPerformance" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_OverAllGeneralPerformance" Member="Employee" ThisKey="EmployeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddionalPAGRelatedGeneral" Member="AddionalPAGRelatedGenerals">
+    <Type Name="AddionalPAGRelatedGeneral">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatinDAte" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GoodPractices" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AreasToBeReviewed" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmployeeStatement" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_AddionalPAGRelatedGeneral" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_AddionalPAGRelatedGeneral" Member="Employee" ThisKey="EmployeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AnnualEmployeeEvaluationNotes" Member="AnnualEmployeeEvaluationNotes">
+    <Type Name="AnnualEmployeeEvaluationNote">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineManagerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="evaluationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DirectJobRElated" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AdministrativeRalated" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ClientHandlingRElated" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="General" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="isSubmited" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_AnnualEmployeeEvaluationNote" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_AnnualEmployeeEvaluationNote" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_AnnualEmployeeEvaluationNote1" Member="Employee1" ThisKey="LineManagerId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AnnualEmployeeEvaluationYesNo" Member="AnnualEmployeeEvaluationYesNos">
+    <Type Name="AnnualEmployeeEvaluationYesNo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineManagerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="evaluationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FullySuccessfull" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OutStandingPerformance" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Unsatisfactory" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShouldBePromoted" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isSubmited" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_AnnualEmployeeEvaluationYesNo" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_AnnualEmployeeEvaluationYesNo" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_AnnualEmployeeEvaluationYesNo1" Member="Employee1" ThisKey="LineManagerId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_LineMAnagersEmployes" Member="View_LineMAnagersEmployes">
+    <Type Name="View_LineMAnagersEmploye">
+      <Column Name="employeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineManager" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmpFullName" Type="System.String" DbType="NVarChar(501)" CanBeNull="true" />
+      <Column Name="ENameAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ELNameAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="period" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LKEmployeesToLineMGREvaluation" Member="LKEmployeesToLineMGREvaluations">
+    <Type Name="LKEmployeesToLineMGREvaluation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EvaluationName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EvaluationNameAmharic" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MaxRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinRate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="DataTypes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LKEmployeesToLineMGREvaluation_EmployeesToLineMGREvaluation" Member="EmployeesToLineMGREvaluations" ThisKey="Id" OtherKey="EvaluationPointName" Type="EmployeesToLineMGREvaluation" />
+      <Association Name="LKDatatype_LKEmployeesToLineMGREvaluation" Member="LKDatatype" ThisKey="DataTypes" OtherKey="Id" Type="LKDatatype" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmployeesToLineMGREvaluation" Member="EmployeesToLineMGREvaluations">
+    <Type Name="EmployeesToLineMGREvaluation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineManagerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPointName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPointGiven" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EvaluationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="isSubmitted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="LKEmployeesToLineMGREvaluation_EmployeesToLineMGREvaluation" Member="LKEmployeesToLineMGREvaluation" ThisKey="EvaluationPointName" OtherKey="Id" Type="LKEmployeesToLineMGREvaluation" IsForeignKey="true" />
+      <Association Name="EvaluationPeriod_EmployeesToLineMGREvaluation" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_EmployeesToLineMGREvaluation" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_EmployeesToLineMGREvaluation1" Member="Employee1" ThisKey="LineManagerId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmployeesToLineMGREvaluationForm" Member="EmployeesToLineMGREvaluationForms">
+    <Type Name="EmployeesToLineMGREvaluationForm">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineManagerId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DirectJobRElated" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AdministrativeRElative" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="StaffDevelopement" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Generaln" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsSubmitted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_EmployeesToLineMGREvaluationForm" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_EmployeesToLineMGREvaluationForm" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_EmployeesToLineMGREvaluationForm1" Member="Employee1" ThisKey="LineManagerId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CEOCommentOnAnnualEvaluation" Member="CEOCommentOnAnnualEvaluations">
+    <Type Name="CEOCommentOnAnnualEvaluation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CEoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IsupportTheEvaluation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReasonForTheGibenComment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsSubmitted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_CEOCommentOnAnnualEvaluation" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SubmitedAnnualForms" Member="SubmitedAnnualForms">
+    <Type Name="SubmitedAnnualForm">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsSubmitted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SubmittedDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_SubmitedAnnualForm" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_SubmitedAnnualForm" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EvaluationDisclosure" Member="EvaluationDisclosures">
+    <Type Name="EvaluationDisclosure">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EvalutorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatedEmployeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluationPeriod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDontMind" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AdminOpinionOnDisclosore" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="EvaluationPeriod_EvaluationDisclosure" Member="EvaluationPeriod1" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="EvaluationPeriod_EvaluationDisclosure1" Member="EvaluationPeriod2" ThisKey="EvaluationPeriod" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+      <Association Name="Employee_EvaluationDisclosure" Member="Employee" ThisKey="EvalutorId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_EvaluationDisclosure1" Member="Employee1" ThisKey="EvaluatedEmployeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_EvaluationDisclosure2" Member="Employee2" ThisKey="EvalutorId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_EvaluationDisclosure3" Member="Employee3" ThisKey="EvaluatedEmployeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employees" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ELName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ENameAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ELNameAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="JobPosition" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="JobPositionAM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CompanyId" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Emails" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Employee_Employee_LineManager" Member="Employee_LineManagers" ThisKey="Id" OtherKey="employeeID" Type="Employee_LineManager" />
+      <Association Name="Employee_Employee_LineManager1" Member="Employee_LineManagers1" ThisKey="Id" OtherKey="employeeID" Type="Employee_LineManager" />
+      <Association Name="Employee_Employee_LineManager2" Member="Employee_LineManagers2" ThisKey="Id" OtherKey="LineManager" Type="Employee_LineManager" />
+      <Association Name="Employee_Employee_LineManager3" Member="Employee_LineManagers3" ThisKey="Id" OtherKey="LineManager" Type="Employee_LineManager" />
+      <Association Name="Employee_LKSixMonthPlan" Member="LKSixMonthPlans" ThisKey="Id" OtherKey="PreparedByID" Type="LKSixMonthPlan" />
+      <Association Name="Employee_LKSixMonthPlan1" Member="LKSixMonthPlans1" ThisKey="Id" OtherKey="PreparedByID" Type="LKSixMonthPlan" />
+      <Association Name="Employee_EvaluatedPoint" Member="EvaluatedPoints" ThisKey="Id" OtherKey="EmployeeId" Type="EvaluatedPoint" />
+      <Association Name="Employee_EvaluatedPoint1" Member="EvaluatedPoints1" ThisKey="Id" OtherKey="EmployeeId" Type="EvaluatedPoint" />
+      <Association Name="Employee_EvaluatedPoint2" Member="EvaluatedPoints2" ThisKey="Id" OtherKey="EvaluatorId" Type="EvaluatedPoint" />
+      <Association Name="Employee_EvaluatedPoint3" Member="EvaluatedPoints3" ThisKey="Id" OtherKey="EvaluatorId" Type="EvaluatedPoint" />
+      <Association Name="Employee_SixMonthPlan" Member="SixMonthPlans" ThisKey="Id" OtherKey="PlanSetByEmployeeId" Type="SixMonthPlan" />
+      <Association Name="Employee_SixMonthPlan1" Member="SixMonthPlans1" ThisKey="Id" OtherKey="PlanSetForEmployeeId" Type="SixMonthPlan" />
+      <Association Name="Employee_SixMonthPlan2" Member="SixMonthPlans2" ThisKey="Id" OtherKey="PlanSetByEmployeeId" Type="SixMonthPlan" />
+      <Association Name="Employee_SixMonthPlan3" Member="SixMonthPlans3" ThisKey="Id" OtherKey="PlanSetForEmployeeId" Type="SixMonthPlan" />
+      <Association Name="Employee_WorkPlanforNextYear" Member="WorkPlanforNextYears" ThisKey="Id" OtherKey="EmployeId" Type="WorkPlanforNextYear" />
+      <Association Name="Employee_AnnualColleagueEvaluation" Member="AnnualColleagueEvaluations" ThisKey="Id" OtherKey="EmployeeId" Type="AnnualColleagueEvaluation" />
+      <Association Name="Employee_AnnualColleagueEvaluation1" Member="AnnualColleagueEvaluations1" ThisKey="Id" OtherKey="EvaluatorColleagueId" Type="AnnualColleagueEvaluation" />
+      <Association Name="Employee_AnnualLineManagerEvaluation" Member="AnnualLineManagerEvaluations" ThisKey="Id" OtherKey="EmployeeId" Type="AnnualLineManagerEvaluation" />
+      <Association Name="Employee_AnnualLineManagerEvaluation1" Member="AnnualLineManagerEvaluations1" ThisKey="Id" OtherKey="EvaluatorLineMgrId" Type="AnnualLineManagerEvaluation" />
+      <Association Name="Employee_AreaOfAchievement" Member="AreaOfAchievements" ThisKey="Id" OtherKey="EmployeId" Type="AreaOfAchievement" />
+      <Association Name="Employee_AreaOfImprovement" Member="AreaOfImprovements" ThisKey="Id" OtherKey="EmployeId" Type="AreaOfImprovement" />
+      <Association Name="Employee_AdministrativeRelatedIssuePerformance" Member="AdministrativeRelatedIssuePerformances" ThisKey="Id" OtherKey="EmployeId" Type="AdministrativeRelatedIssuePerformance" />
+      <Association Name="Employee_MarketingRelatedIssuePerformance" Member="MarketingRelatedIssuePerformances" ThisKey="Id" OtherKey="EmployeId" Type="MarketingRelatedIssuePerformance" />
+      <Association Name="Employee_OverAllGeneralPerformance" Member="OverAllGeneralPerformances" ThisKey="Id" OtherKey="EmployeId" Type="OverAllGeneralPerformance" />
+      <Association Name="Employee_AddionalPAGRelatedGeneral" Member="AddionalPAGRelatedGenerals" ThisKey="Id" OtherKey="EmployeId" Type="AddionalPAGRelatedGeneral" />
+      <Association Name="Employee_AnnualEmployeeEvaluationNote" Member="AnnualEmployeeEvaluationNotes" ThisKey="Id" OtherKey="EmployeeId" Type="AnnualEmployeeEvaluationNote" />
+      <Association Name="Employee_AnnualEmployeeEvaluationNote1" Member="AnnualEmployeeEvaluationNotes1" ThisKey="Id" OtherKey="LineManagerId" Type="AnnualEmployeeEvaluationNote" />
+      <Association Name="Employee_AnnualEmployeeEvaluationYesNo" Member="AnnualEmployeeEvaluationYesNos" ThisKey="Id" OtherKey="EmployeeId" Type="AnnualEmployeeEvaluationYesNo" />
+      <Association Name="Employee_AnnualEmployeeEvaluationYesNo1" Member="AnnualEmployeeEvaluationYesNos1" ThisKey="Id" OtherKey="LineManagerId" Type="AnnualEmployeeEvaluationYesNo" />
+      <Association Name="Employee_EmployeesToLineMGREvaluation" Member="EmployeesToLineMGREvaluations" ThisKey="Id" OtherKey="EmployeeId" Type="EmployeesToLineMGREvaluation" />
+      <Association Name="Employee_EmployeesToLineMGREvaluation1" Member="EmployeesToLineMGREvaluations1" ThisKey="Id" OtherKey="LineManagerId" Type="EmployeesToLineMGREvaluation" />
+      <Association Name="Employee_EmployeesToLineMGREvaluationForm" Member="EmployeesToLineMGREvaluationForms" ThisKey="Id" OtherKey="EmployeeId" Type="EmployeesToLineMGREvaluationForm" />
+      <Association Name="Employee_EmployeesToLineMGREvaluationForm1" Member="EmployeesToLineMGREvaluationForms1" ThisKey="Id" OtherKey="LineManagerId" Type="EmployeesToLineMGREvaluationForm" />
+      <Association Name="Employee_SubmitedAnnualForm" Member="SubmitedAnnualForms" ThisKey="Id" OtherKey="EmployeeId" Type="SubmitedAnnualForm" />
+      <Association Name="Employee_EvaluationDisclosure" Member="EvaluationDisclosures" ThisKey="Id" OtherKey="EvalutorId" Type="EvaluationDisclosure" />
+      <Association Name="Employee_EvaluationDisclosure1" Member="EvaluationDisclosures1" ThisKey="Id" OtherKey="EvaluatedEmployeId" Type="EvaluationDisclosure" />
+      <Association Name="Employee_EvaluationDisclosure2" Member="EvaluationDisclosures2" ThisKey="Id" OtherKey="EvalutorId" Type="EvaluationDisclosure" />
+      <Association Name="Employee_EvaluationDisclosure3" Member="EvaluationDisclosures3" ThisKey="Id" OtherKey="EvaluatedEmployeId" Type="EvaluationDisclosure" />
+      <Association Name="Employee_Employee_evaluatorColleague" Member="Employee_evaluatorColleagues" ThisKey="Id" OtherKey="EmployeeId" Type="Employee_evaluatorColleague" />
+      <Association Name="Employee_Employee_evaluatorColleague1" Member="Employee_evaluatorColleagues1" ThisKey="Id" OtherKey="EvaluatorColleague" Type="Employee_evaluatorColleague" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee_evaluatorColleague" Member="Employee_evaluatorColleagues">
+    <Type Name="Employee_evaluatorColleague">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EvaluatorColleague" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="period" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="statuss" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastReminderSent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Employee_Employee_evaluatorColleague" Member="Employee" ThisKey="EmployeeId" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="Employee_Employee_evaluatorColleague1" Member="Employee1" ThisKey="EvaluatorColleague" OtherKey="Id" Type="Employee" IsForeignKey="true" />
+      <Association Name="EvaluationPeriod_Employee_evaluatorColleague" Member="EvaluationPeriod" ThisKey="period" OtherKey="Id" Type="EvaluationPeriod" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

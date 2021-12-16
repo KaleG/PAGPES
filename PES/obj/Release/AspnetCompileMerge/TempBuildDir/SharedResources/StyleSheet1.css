@@ -1,0 +1,61 @@
+﻿
+td.formTable {
+    line-height: normal;
+    vertical-align: top;
+    text-align: left;
+    text-indent: inherit;
+    white-space: normal;
+    word-spacing: normal;
+    letter-spacing: normal;
+    border: thin dotted #cc7a00;
+    padding: inherit;
+    margin: auto;
+    height: 20px;
+    width: 40%
+}
+
+.formTbx {
+    background-color: #F0F0F0;
+    border-color: #DDDDDD;
+    font-family: Book Antiqua;
+    Font-Size: Medium;
+    height: 35px;
+    width: 100%;
+}
+
+.footer {
+    margin-bottom: 0px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e6e6e6;
+    color: white;
+    text-align: left;
+}
+
+.buttonStyling {
+    background-color: #f5f8fa;
+    border: none;
+    color: black;
+    padding-left:20px;
+    padding-right:20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btnFormSectoin {
+    width: 100%;
+    margin: 5px;
+    color:#cc7a00;
+}
+
+.divformSections {
+    width: 100%;
+    margin: 5px;
+   
+}

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.25" name="PerformanceEvaluationDB">
+  <DataContextMoniker Name="/PerformanceEvaluationDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="cf20b8fb-cef2-4a7e-bb15-ed83f6536475" absoluteBounds="0.75, 3.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c62721a-dd55-4249-be64-ca57695adc21" absoluteBounds="0.765, 4.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee7da610-8c9d-4da5-9318-194c9a9f9ebd" absoluteBounds="3.5, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/EvaluatedPoint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f2cd035-a4bd-455b-911e-dd093866085c" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c60432e-2d76-4980-8642-bf3845c8689f" absoluteBounds="0.75, 1, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/EvaluationPeriod" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e04681af-2d2f-4dea-bf24-d9f756e42c31" absoluteBounds="0.765, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c840436e-a332-4dbb-9e5e-392b02402d8b" absoluteBounds="1.5, 10.625, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/LKDatatype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="986fbf70-50de-402b-b036-d1cd37bc6552" absoluteBounds="1.5150000000000001, 11.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="680dd4de-3107-4113-944a-50d1bd740805" absoluteBounds="0.75, 7.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/LKEvaluationPoint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12be2838-b770-40ac-90e2-86651826dd94" absoluteBounds="0.765, 7.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d21853ff-d120-4843-af22-b7e192869aa8" absoluteBounds="3.5, 4, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/LKSixMonthPlan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="905ec4eb-f28e-42da-8564-e951abad0da9" absoluteBounds="3.515, 4.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d65e8059-ab02-41cc-b0a2-89524a98d88f" absoluteBounds="4.75, 8.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/LKUsersRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49d1b82c-3c15-44b8-a8bb-5c3e945fe831" absoluteBounds="4.765, 8.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="72eac24f-75c1-48d9-9f60-21040f1e761e" absoluteBounds="6.25, 3.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/SixMonthPlan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="42fdf37d-dab0-4fbd-a770-9769b738bd44" absoluteBounds="6.265, 4.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8ccb7a4-2ac9-40e0-ade7-26165123c037" absoluteBounds="7.5, 7.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/UsersLogIn" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5945f8c1-46d9-4dd9-baae-c6f027065f04" absoluteBounds="7.515, 8.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5c22aa4c-efbb-4d11-8f34-054b91cc40a2" absoluteBounds="8.75, 1.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/PerformanceEvaluationDBDataContext/View_EmployessList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3732e6f-9418-4d98-8238-a0dcb20f215e" absoluteBounds="8.765, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.65884515384615); (3 : 3.40884515384615); (3 : 3.63164626061699); (3.31607443490112 : 3.31557182571587 : JumpStart); (3.43392556509888 : 3.19772069551811 : JumpEnd); (3.53384515384615 : 3.09780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/Employee/Employee_EvaluatedPoint" />
+      <nodes>
+        <classShapeMoniker Id="cf20b8fb-cef2-4a7e-bb15-ed83f6536475" />
+        <classShapeMoniker Id="ee7da610-8c9d-4da5-9318-194c9a9f9ebd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.65422976923077); (3.1875 : 3.21672976923077); (3.1875 : 3.37799341446314); (3.31607443490112 : 3.24941897956202 : JumpStart); (3.43392556509888 : 3.13156784936426 : JumpEnd); (3.5 : 3.06549341446314)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/Employee/Employee_EvaluatedPoint1" />
+      <nodes>
+        <classShapeMoniker Id="cf20b8fb-cef2-4a7e-bb15-ed83f6536475" />
+        <classShapeMoniker Id="ee7da610-8c9d-4da5-9318-194c9a9f9ebd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.69314697265625); (3.5 : 1.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/EvaluationPeriod/EvaluationPeriod_EvaluatedPoint" />
+      <nodes>
+        <classShapeMoniker Id="0c60432e-2d76-4980-8642-bf3845c8689f" />
+        <classShapeMoniker Id="ee7da610-8c9d-4da5-9318-194c9a9f9ebd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.25153746153846); (3.375 : 6.62653746153846); (3.375 : 2.3793201935597); (3.5 : 2.3793201935597)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/LKEvaluationPoint/LKEvaluationPoint_EvaluatedPoint" />
+      <nodes>
+        <classShapeMoniker Id="680dd4de-3107-4113-944a-50d1bd740805" />
+        <classShapeMoniker Id="ee7da610-8c9d-4da5-9318-194c9a9f9ebd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 10.625); (2.125 : 9.40549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/LKDatatype/LKDatatype_LKEvaluationPoint" />
+      <nodes>
+        <classShapeMoniker Id="c840436e-a332-4dbb-9e5e-392b02402d8b" />
+        <classShapeMoniker Id="680dd4de-3107-4113-944a-50d1bd740805" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 11.3181469726562); (4.125 : 11.3181469726562); (4.125 : 5.9631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/LKDatatype/LKDatatype_LKSixMonthPlan" />
+      <nodes>
+        <classShapeMoniker Id="c840436e-a332-4dbb-9e5e-392b02402d8b" />
+        <classShapeMoniker Id="d21853ff-d120-4843-af22-b7e192869aa8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.98159912109375); (3.29166666666667 : 4.98159912109375 : JumpStart); (3.45833333333333 : 4.98159912109375 : JumpEnd); (3.5 : 4.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/Employee/Employee_LKSixMonthPlan" />
+      <nodes>
+        <classShapeMoniker Id="cf20b8fb-cef2-4a7e-bb15-ed83f6536475" />
+        <classShapeMoniker Id="d21853ff-d120-4843-af22-b7e192869aa8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.07097245898437); (2.875 : 2.07097245898437); (2.875 : 3.34780110677083); (2.9730953291266 : 3.34780110677083 : JumpStart); (3.13976199579327 : 3.34780110677083 : JumpEnd); (3.20051182051282 : 3.34780110677083 : JumpStart); (3.45833333333333 : 3.34780110677083 : JumpEnd); (7.25 : 3.34780110677083); (7.25 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/EvaluationPeriod/EvaluationPeriod_SixMonthPlan" />
+      <nodes>
+        <classShapeMoniker Id="0c60432e-2d76-4980-8642-bf3845c8689f" />
+        <classShapeMoniker Id="72eac24f-75c1-48d9-9f60-21040f1e761e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.98159912109375); (6.25 : 4.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/LKSixMonthPlan/LKSixMonthPlan_SixMonthPlan" />
+      <nodes>
+        <classShapeMoniker Id="d21853ff-d120-4843-af22-b7e192869aa8" />
+        <classShapeMoniker Id="72eac24f-75c1-48d9-9f60-21040f1e761e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.82942507692308); (3.29166666666667 : 3.82942507692308 : JumpStart); (3.45833333333333 : 3.82942507692308 : JumpEnd); (6.25 : 3.82942507692308)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/Employee/Employee_SixMonthPlan" />
+      <nodes>
+        <classShapeMoniker Id="cf20b8fb-cef2-4a7e-bb15-ed83f6536475" />
+        <classShapeMoniker Id="72eac24f-75c1-48d9-9f60-21040f1e761e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.095400390625); (3.29166666666667 : 6.095400390625 : JumpStart); (3.45833333333333 : 6.095400390625 : JumpEnd); (4.04166666666667 : 6.095400390625 : JumpStart); (4.20833333333333 : 6.095400390625 : JumpEnd); (6.25 : 6.095400390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/Employee/Employee_SixMonthPlan1" />
+      <nodes>
+        <classShapeMoniker Id="cf20b8fb-cef2-4a7e-bb15-ed83f6536475" />
+        <classShapeMoniker Id="72eac24f-75c1-48d9-9f60-21040f1e761e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.75 : 8.94314697265625); (7.5 : 8.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PerformanceEvaluationDBDataContext/LKUsersRole/LKUsersRole_UsersLogIn" />
+      <nodes>
+        <classShapeMoniker Id="d65e8059-ab02-41cc-b0a2-89524a98d88f" />
+        <classShapeMoniker Id="a8ccb7a4-2ac9-40e0-ade7-26165123c037" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

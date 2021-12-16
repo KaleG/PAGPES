@@ -1,0 +1,470 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B738DA72-5F87-4C49-AFD9-B604710F7F0E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PES</RootNamespace>
+    <AssemblyName>PES</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IISExpressSSLPort>44324</IISExpressSSLPort>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>C:\Users\KaleabG\Desktop\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>C:\Users\KaleabG\Desktop\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Images\Panafric-Global-Logo.png" />
+    <Content Include="Images\PES1.PNG" />
+    <Content Include="Images\PES2.PNG" />
+    <Content Include="Images\PES3.PNG" />
+    <Content Include="Images\PES4.PNG" />
+    <Content Include="Presentation\6MonthPlanReports.aspx" />
+    <Content Include="Presentation\AllEmployeesReport.aspx" />
+    <Content Include="Presentation\AllEvaluationReport.aspx" />
+    <Content Include="Presentation\AnnualColleagueFeedBack.aspx" />
+    <Content Include="Presentation\AnnualEmployeeEvaluation.aspx" />
+    <Content Include="Presentation\AnnualEvaluationREportByEmployee.aspx" />
+    <Content Include="Presentation\AnnualLineMgrFeedBack.aspx" />
+    <Content Include="Presentation\AnnualPESheet.aspx" />
+    <Content Include="Presentation\AreaManaget6MonthPlan.aspx" />
+    <Content Include="Presentation\EvaluateLineManager.aspx" />
+    <Content Include="Presentation\EvaluationByLineManager.aspx" />
+    <Content Include="Presentation\EvaluationGeneralReport.aspx" />
+    <Content Include="Presentation\GeneralEvaluationReport.aspx" />
+    <Content Include="Presentation\GeneralPlanningReport.aspx" />
+    <Content Include="Presentation\GiveColleagueAnnualEvaluation4.aspx" />
+    <Content Include="Presentation\Home.aspx" />
+    <Content Include="Presentation\LineManagersEvaluationReport.aspx" />
+    <Content Include="Presentation\Login.aspx" />
+    <Content Include="Presentation\MidTermColleagueEvaluation.aspx" />
+    <Content Include="Presentation\MidTermEvaluationSheet.aspx" />
+    <Content Include="Presentation\MyEmployesEvaluation.aspx" />
+    <Content Include="Presentation\Next6MonthPlans.aspx" />
+    <Content Include="Presentation\PdfGeneratorForm.aspx" />
+    <Content Include="Presentation\ReportOnColleagueEvaluation.aspx" />
+    <Content Include="Presentation\ReportUnSubmittedEvaluation.aspx" />
+    <Content Include="Presentation\ReportUnsubmittedPlan.aspx" />
+    <Content Include="Presentation\Set6MonthPlanForColleage.aspx" />
+    <Content Include="Presentation\SubmittedAnnualForms.aspx" />
+    <Content Include="Presentation\UserManagement.aspx" />
+    <Content Include="Presentation\UserProfile.aspx" />
+    <Content Include="Presentation\WebForm2.aspx" />
+    <Content Include="Presentation\WorkPlanforNextYear.aspx" />
+    <None Include="Resources\nyala.png" />
+    <Content Include="SharedResources\bootstrap.min.css" />
+    <Content Include="SharedResources\bootstrap.min.js" />
+    <Content Include="SharedResources\Capture.PNG" />
+    <Content Include="SharedResources\JavaScript.js" />
+    <Content Include="SharedResources\jquery.min.js" />
+    <Content Include="SharedResources\justcodes.txt" />
+    <Content Include="SharedResources\logo_3Na_icon.ico" />
+    <Content Include="SharedResources\StyleSheet1.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\PerformanceEvaluationDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PerformanceEvaluationDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\6MonthPlanReports.aspx.cs">
+      <DependentUpon>6MonthPlanReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\6MonthPlanReports.aspx.designer.cs">
+      <DependentUpon>6MonthPlanReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AllEmployeesReport.aspx.cs">
+      <DependentUpon>AllEmployeesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AllEmployeesReport.aspx.designer.cs">
+      <DependentUpon>AllEmployeesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AllEvaluationReport.aspx.cs">
+      <DependentUpon>AllEvaluationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AllEvaluationReport.aspx.designer.cs">
+      <DependentUpon>AllEvaluationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AnnualColleagueFeedBack.aspx.cs">
+      <DependentUpon>AnnualColleagueFeedBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AnnualColleagueFeedBack.aspx.designer.cs">
+      <DependentUpon>AnnualColleagueFeedBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AnnualEmployeeEvaluation.aspx.cs">
+      <DependentUpon>AnnualEmployeeEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AnnualEmployeeEvaluation.aspx.designer.cs">
+      <DependentUpon>AnnualEmployeeEvaluation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AnnualEvaluationREportByEmployee.aspx.cs">
+      <DependentUpon>AnnualEvaluationREportByEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AnnualEvaluationREportByEmployee.aspx.designer.cs">
+      <DependentUpon>AnnualEvaluationREportByEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AnnualLineMgrFeedBack.aspx.cs">
+      <DependentUpon>AnnualLineMgrFeedBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AnnualLineMgrFeedBack.aspx.designer.cs">
+      <DependentUpon>AnnualLineMgrFeedBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AnnualPESheet.aspx.cs">
+      <DependentUpon>AnnualPESheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AnnualPESheet.aspx.designer.cs">
+      <DependentUpon>AnnualPESheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AreaManaget6MonthPlan.aspx.cs">
+      <DependentUpon>AreaManaget6MonthPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\AreaManaget6MonthPlan.aspx.designer.cs">
+      <DependentUpon>AreaManaget6MonthPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\EvaluateLineManager.aspx.cs">
+      <DependentUpon>EvaluateLineManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\EvaluateLineManager.aspx.designer.cs">
+      <DependentUpon>EvaluateLineManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\EvaluationByLineManager.aspx.cs">
+      <DependentUpon>EvaluationByLineManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\EvaluationByLineManager.aspx.designer.cs">
+      <DependentUpon>EvaluationByLineManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\EvaluationGeneralReport.aspx.cs">
+      <DependentUpon>EvaluationGeneralReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\EvaluationGeneralReport.aspx.designer.cs">
+      <DependentUpon>EvaluationGeneralReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GeneralEvaluationReport.aspx.cs">
+      <DependentUpon>GeneralEvaluationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\GeneralEvaluationReport.aspx.designer.cs">
+      <DependentUpon>GeneralEvaluationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GeneralPlanningReport.aspx.cs">
+      <DependentUpon>GeneralPlanningReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\GeneralPlanningReport.aspx.designer.cs">
+      <DependentUpon>GeneralPlanningReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\GiveColleagueAnnualEvaluation4.aspx.cs">
+      <DependentUpon>GiveColleagueAnnualEvaluation4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\GiveColleagueAnnualEvaluation4.aspx.designer.cs">
+      <DependentUpon>GiveColleagueAnnualEvaluation4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\LineManagersEvaluationReport.aspx.cs">
+      <DependentUpon>LineManagersEvaluationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\LineManagersEvaluationReport.aspx.designer.cs">
+      <DependentUpon>LineManagersEvaluationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MidTermColleagueEvaluation.aspx.cs">
+      <DependentUpon>MidTermColleagueEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\MidTermColleagueEvaluation.aspx.designer.cs">
+      <DependentUpon>MidTermColleagueEvaluation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MidTermEvaluationSheet.aspx.cs">
+      <DependentUpon>MidTermEvaluationSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\MidTermEvaluationSheet.aspx.designer.cs">
+      <DependentUpon>MidTermEvaluationSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\MyEmployesEvaluation.aspx.cs">
+      <DependentUpon>MyEmployesEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\MyEmployesEvaluation.aspx.designer.cs">
+      <DependentUpon>MyEmployesEvaluation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Next6MonthPlans.aspx.cs">
+      <DependentUpon>Next6MonthPlans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Next6MonthPlans.aspx.designer.cs">
+      <DependentUpon>Next6MonthPlans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\PdfGeneratorForm.aspx.cs">
+      <DependentUpon>PdfGeneratorForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\PdfGeneratorForm.aspx.designer.cs">
+      <DependentUpon>PdfGeneratorForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ReportOnColleagueEvaluation.aspx.cs">
+      <DependentUpon>ReportOnColleagueEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\ReportOnColleagueEvaluation.aspx.designer.cs">
+      <DependentUpon>ReportOnColleagueEvaluation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ReportUnSubmittedEvaluation.aspx.cs">
+      <DependentUpon>ReportUnSubmittedEvaluation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\ReportUnSubmittedEvaluation.aspx.designer.cs">
+      <DependentUpon>ReportUnSubmittedEvaluation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\ReportUnsubmittedPlan.aspx.cs">
+      <DependentUpon>ReportUnsubmittedPlan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\ReportUnsubmittedPlan.aspx.designer.cs">
+      <DependentUpon>ReportUnsubmittedPlan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Set6MonthPlanForColleage.aspx.cs">
+      <DependentUpon>Set6MonthPlanForColleage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Set6MonthPlanForColleage.aspx.designer.cs">
+      <DependentUpon>Set6MonthPlanForColleage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\SubmittedAnnualForms.aspx.cs">
+      <DependentUpon>SubmittedAnnualForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\SubmittedAnnualForms.aspx.designer.cs">
+      <DependentUpon>SubmittedAnnualForms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\UserManagement.aspx.designer.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\WorkPlanforNextYear.aspx.cs">
+      <DependentUpon>WorkPlanforNextYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\WorkPlanforNextYear.aspx.designer.cs">
+      <DependentUpon>WorkPlanforNextYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedResources\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SharedResources\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataAccess\PerformanceEvaluationDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>PerformanceEvaluationDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="SharedResources\_Header.cshtml" />
+    <Content Include="Presentation\MidTermEvaluationSheet.cshtml" />
+    <Content Include="SharedResources\Site1.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Resources\NYALA.TTF" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataAccess\PerformanceEvaluationDB.dbml.layout">
+      <DependentUpon>PerformanceEvaluationDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64886/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
